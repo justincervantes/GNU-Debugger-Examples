@@ -17,6 +17,8 @@ __Finding the issue__:
 4.	Execute “coredumpctl gdb” which will open the last created core
 5.	Looking at the core, you can tell that the issue is with the scanf API call (library line 1881). I can run the code with debugger using “gdb ./ex1” to find the exact line in main where this is called, but since there is only 1 scanf call, I know where the issue is.
 
+![Example1 Debugging](Images/ex1.png)
+
 __Issue resolution:__
 
 1.	The line is “scanf(“%d”, k);” where k is an int
@@ -42,6 +44,8 @@ __Finding the issue:__
 4.	Execute “coredumpctl gdb” which will open the last created core
 5.	The core tells you that there was an issue on line 33 with the return statement which adds the variables in its unique adding pattern.
 6.	As this is a memory leak, we can try printing out the addresses of the variables passed. When doing so, we see that var2 has a memory address of 0x0, which indicates that it is trying to dereference and add a null pointer, which will of course crash the program. 
+
+![Example2 Debugging](Images/ex2.png)
 
 __Issue resolution:__
 
@@ -73,6 +77,8 @@ __Finding the issue:__
 7.	It has stopped at the entrance to the first test, press “c” to continue the debugger, you should see the debugger print out that test 1 passes. “Test #1 = 1”
 8.	As this is a segmentation fault, we want to print the values of “ptr1” and “ptr2” throughout the code to see if we have a 0x0 memory address.
 9.	Press n to iterate through the while loop once, then check the values. Do this until you notice the loop enters while ptr2 is null.
+
+![Example3 Debugging](Images/ex3.png)
 
 __Issue resolution:__
 
