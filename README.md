@@ -1,6 +1,8 @@
 # GNU-Debugger-Examples
 A tutorial showing the use of GNU Debugger (GDB) to help navigate finding and resolving code issues. The examples, though trivial and perhaps easily discoverable by the reader, serve to just show how to use GDB to help find issues faster.
 
+The examples with issues in them are ex1.c, ex2.c and ex3.c. The code for the examples was sourced from Aman Abdulla, and the fixes with explanations are provided by myself.
+
 
 ## Example 1 ##
 __Code reference:__ ex1.c
