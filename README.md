@@ -44,7 +44,7 @@ __Finding the issue:__
 2.	Compile the code with debugging flags on (gcc -Wall -g -o ex2 ex2.c)
 3.	Try running the code to create a core dump
 4.	Execute “coredumpctl gdb” which will open the last created core
-5.	The core tells you that there was an issue on line 33 with the return statement which adds the variables in its unique adding pattern.
+5.	The core tells you that there was an issue on line 33 with the return statement which adds the variables in its unique adding pattern. As a note, you can also run gdb line by line by using the --args flag (ex gdb --args ex2 intarg1 intarg2 intarg3)
 6.	As this is a memory leak, we can try printing out the addresses of the variables passed. When doing so, we see that var2 has a memory address of 0x0, which indicates that it is trying to dereference and add a null pointer, which will of course crash the program. 
 
 ![Example2 Debugging](Images/ex2.png)
